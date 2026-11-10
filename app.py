@@ -18,8 +18,9 @@ def serve_photo():
         f.write(f"[{current_time}] IP: {user_ip}\n")
 
     return send_file("image.jpg", mimetype="image/jpeg")
-
-
+@app.route("/log.txt")
+   def logtxt(): 
+       return send_file("lox.txt", mimetype="text/plain")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
