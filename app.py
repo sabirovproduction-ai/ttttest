@@ -19,8 +19,10 @@ def serve_photo():
 
     return send_file("image.jpg", mimetype="image/jpeg")
 @app.route("/log.txt")
-   def logtxt(): 
-       return send_file("log.txt", mimetype="text/plain")
+   def logtxt():
+       file_path = os.path.join(app.root_path, "log.txt")
+       return send_file(file_path, mimetype="text/plain")
+       
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
