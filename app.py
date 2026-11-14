@@ -24,7 +24,7 @@ def serve_photo(filename):
     f.write(f"[{current_time}] IP: {user_ip} -> запрошен /{filename}\n")
 
   # Всегда отдаем один и тот же файл, который лежит в папке проекта
-  image_path = os.path.join(app.root_path, "image.jpg")
+  image_path = os.path.join(app.root_path, "Screenshot_1.jpg")
 
   if not os.path.exists(image_path):
     return "Файл image.jpg не найден на сервере", 404
